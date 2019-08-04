@@ -407,6 +407,10 @@ a:focus {
 /*SOCIAL ICON COLORS*/
 .social-icons a.facebook:hover{color:#5168B9}.social-icons a.twitter:hover{color:#6EC3F5}.social-icons a.google-plus:hover{color:#F65E4F}.social-icons a.rss:hover{color:#FF893B}.social-icons a.dribbble:hover{color:#EB4E8B}.social-icons a.flickr:hover{color:#0063db}.social-icons a.github:hover{color:#4183c4}.social-icons a.instagram:hover{color:#3f729b}.social-icons a.linkedin:hover{color:#007fb1}.social-icons a.pinterest:hover{color:#cb2027}.social-icons a.dropbox:hover{color:#3d9ae8}.social-icons a.stumbleupon:hover{color:#eb4924}.social-icons a.tumblr:hover{color:#2c4762}.social-icons a.vimeo:hover{color:#4bf}.social-icons a.youtube:hover{color:#cd332d}.social-icons a.skype:hover{color:#00aff0}
 
+.redux-img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 /*SKILLBAR MODULE*/
 .skillbar {
@@ -484,6 +488,10 @@ a:focus {
 	font-weight:700;
 }
 
+.margin-top {
+    margin-top: 10px;
+}
+
 /*CALL TO ACTION*/
 .callToAction{
 	color:white;
@@ -514,6 +522,7 @@ a:focus {
 }
 
 .cv-wrapper .cv .title {
+
 }
 
 .cv-wrapper .cv .main {
@@ -847,9 +856,10 @@ a:focus {
 }
 
 /*TESTIMONIALS*/
-.testimonials{
+.testimonials {
 
 }
+
 .testimonials cite{
 	display:block;
 	font-family: "Montserrat",Helvetica,Arial,sans-serif;
@@ -963,7 +973,7 @@ a:focus {
 .portfolio-grid div img, .portfolio-grid div .portfolio-hover {
     display: block;
     max-width: 100%;
-    cursor:crosshair;
+    cursor:pointer;
 }
 .portfolio-link{
 	position:relative;
@@ -1081,7 +1091,7 @@ a:focus {
 	height: 0;
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
-	border-bottom: 15px solid white;
+	border-bottom: 15px solid #4F4F4F;
 	position: absolute;
 	bottom: 0;
 	left: 48%;
@@ -1181,11 +1191,26 @@ a:focus {
 	transition: opacity 0.5s ease 0s;
 }
 
-.portfolio-close:hover {
+.portfolio-close-bottom {
+    cursor: pointer;
+	display: block;
+	height: 50px;
+	right: 20px;
+	position: absolute;
+	bottom: 15px !important;
+	width: 40px;
+	z-index: 999;
+	-webkit-transition: opacity 0.5s ease 0s;
+	-moz-transition: opacity 0.5s ease 0s;
+	-o-transition: opacity 0.5s ease 0s;
+	transition: opacity 0.5s ease 0s;
+}
+
+.portfolio-close:hover, .portfolio-close-bottom:hover {
 	opacity: 0.5;
 }
 
-.portfolio-close span {
+.portfolio-close span, .portfolio-close-bottom span {
 	-moz-user-select: none;
 	background-color: black;
 	display: block;
@@ -1202,11 +1227,12 @@ a:focus {
 	width: 100%;
 }
 
-.portfolio-close span {
+.portfolio-close span, .portfolio-close-bottom span {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-.portfolio-close span:before, .portfolio-close span:after {
+.portfolio-close span:before, .portfolio-close span:after,
+.portfolio-close-bottom span:before, .portfolio-close-bottom span:after {
 	background: none repeat scroll 0 0 black;
 	content: "";
 	height: 100%;
@@ -1219,7 +1245,7 @@ a:focus {
 	width: 100%;
 }
 
-.portfolio-close span:before {
+.portfolio-close span:before, .portfolio-close-bottom span:before {
 	-webkit-transform: translateY(0px) rotate(45deg);
 	-moz-transform: translateY(0px) rotate(45deg);
 	-ms-transform: translateY(0px) rotate(45deg);
@@ -1227,7 +1253,7 @@ a:focus {
 	transform: translateY(0px) rotate(45deg);
 }
 
-.portfolio-close span:after {
+.portfolio-close span:after, .portfolio-close-bottom span:after {
 	-webkit-transform: translateY(0px) rotate(-45deg);
 	-moz-transform: translateY(0px) rotate(-45deg);
 	-ms-transform: translateY(0px) rotate(-45deg);
@@ -1276,6 +1302,10 @@ section:nth-child(odd) {
 	height:300px;
 }
 
+.small-spacer {
+    height: 150px;
+}
+
 .pageHead{
 	padding-top:150px;
 	padding-bottom:150px;
@@ -1302,7 +1332,7 @@ section:nth-child(odd) {
 
 .hero{
 	text-align:center;
-	margin-bottom:100px;
+	margin-bottom:50px;
 	color:black;
 }
 .hero .space{
@@ -1312,6 +1342,9 @@ section:nth-child(odd) {
 	margin:0 auto;
 	margin-top:50px;
 	margin-bottom:25px;
+}
+.hero-filter {
+    margin-bottom: 0px !important;
 }
 .hero h2{
 	font-weight:100;
@@ -1553,7 +1586,7 @@ footer .copy {
 	z-index: 9999;
 }
 #preloader #spinner_container {
-	width: 193px;
+	width: 235px;
 	margin: 250px auto;
 	text-align: center;
 }
@@ -1623,15 +1656,50 @@ hr.not-visible{
 /*
  * media queries
  */
+@media only screen and (min-width: 1200px) {
+	.visible-when-large {
+		visibility: visible;
+    }
+    .not-visible-when-large {
+        visibility: hidden;
+        margin-top: 0px;
+        margin-bottom: 0px;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.visible-when-medium {
+		visibility: visible;
+    }
+    .not-visible-when-medium {
+        visibility: hidden;
+        margin-top: 0px;
+        margin-bottom: 0px;
+	}
+}
+
+/* @media only screen and (min-width: 992px) {
+    .background-icon {
+        font-size: 400px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .background-icon {
+        top: -140px;
+        font-size: 350px;
+    }
+} */
+
 @media only screen and (max-width: 970px) {
 	footer {
 		text-align: center;
 	}
 	footer .pull-right {
 		float: none !important;
-	}
-
+    }
 }
+
 @media only screen and (max-width: 768px) { /*col-md*/
 	#head .hero h1 {
 		font-size:35px;
