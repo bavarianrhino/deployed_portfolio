@@ -830,392 +830,168 @@
         </div>
     </section>
 	
-	<section id="blog">
-		<div class="container">
-			<div class="row">
-				<div class="hero col-sm-6 col-sm-offset-3">
-					<h2>Recent Blog Posts</h2>
-					<p>Go have a look</p>
-					<div class="space"></div>
-				</div>
-			</div>
+	   <section id="awards">
+        <div class="container">
+            <div class="row"></div>
+        </div>
+    </section>
+    
+    <section id="contact" class="no-section-padding">
+        <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+            <path d="M0 0 L50 100 L100 0 Z" />
+        </svg>
+        <div class="container text-center">
+            <div class="row section-padding">
+                <div class="hero">
+                    <h2>Get in touch</h2>
+                    <p>I would love to hear from you!</p>
+                </div>
+                <div class="col-sm-6 col-sm-offset-3 animated" data-animation-delay="300" data-animation="fadeInLeft">
+                    <h4>Ryan Riesenberger</h4>
+                    <address>
+                        Atlanta, Georgia
+                        <br>
+                        <abbr title="Phone">P:</abbr> (619) 508-0510
+                        <br>
+                        <a href="mailto:rjriesenberger@gmail.com">rjriesenberger@gmail.com</a>
+                    </address>
+                    <div class="background-icon left animated" data-animation-delay="400" data-animation="fadeInRight">
+                        <i class="fa fa-envelope-o"></i>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-sm-offset-3 animated" data-animation-delay="600" data-animation="fadeInRight">
+                    <form class="contact-form" id="contact-form" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="inputName">Name</label>
+                            <input type="text" placeholder="Name" name="inputName" id="inputName" class="form-control">
+                        </div>
+    
+                        <div class="form-group">
+                            <label class="sr-only" for="inputEmail">Email address</label>
+                            <input type="email" placeholder="Enter email" name="inputEmail" id="inputEmail"
+                                class="form-control">
+                        </div>
+    
+                        <div class="form-group">
+                            <label class="sr-only" for="inputMessage">Message</label>
+                            <textarea placeholder="Your Message" name="inputMessage" rows="5" id="inputMessage"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="pull-right">
+                            <p><button id="contact-submit" class="btn btn-default btn-submit" type="submit"><i
+                                        class="fa fa-check"></i> Submit</button></p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="contact-form-response"></div>
+                    </form>
+                </div>
+            </div>
+            <!--row-->
+    
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ryan-riesenberger-b4725b167/" target="_blank"><i
+                        class="fa fa-linkedin fa-fw"></i></a>
+                <a href="https://github.com/bavarianrhino" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+                <a href="https://www.youtube.com/channel/UCVMC20Zr6Td7vgOCgOBjhOg" target="_blank"><i
+                        class="fa fa-youtube fa-fw"></i></a>
+                <a href="https://www.pinterest.com/riesrya/" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
+            </div>
+            <div class="clearfix"></div>
+    
+        </div>
+        <!--container-->
+    </section>
+    
+    <!--footer-->
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copy">
+                        <!-- &copy; <strong>JOHN SLAMR</strong> 2014 | TEMPLATE CREATED BY <a href="http://www.createbrilliance.com" target="_blank">CREATEBRILLIANCE - Media &amp; Consulting</a> -->
+                        &copy; <strong>RYAN RIESENBERGER</strong> 2019
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            SLAMR.preloader();
+            SLAMR.videoBgYT('#video-wrapper', '7xbqVuaMufs');
+            // PUOun9RImC8
+            // https://youtu.be/jYxC-G9gRTE
+            // https://youtu.be/LEzsbOfW6es
+            // https://youtu.be/7xbqVuaMufs
+            SLAMR.nav();
+            SLAMR.parallax(true);
+            SLAMR.slider("#slides", { 'play': false, 'animation': 'fade' });
+            SLAMR.skillbar("animated");
+            SLAMR.scrollAnim("yes");
+            SLAMR.owlCarousel({
+                '#owl-carousel-blog': {
+                    singleItem: true,
+                    lazyLoad: true,
+                    autoPlay: true
+                },
+                '#owl-carousel-clients': {
+                    navigation: true,
+                    navigationText: [
+                        "<i class='fa fa-angle-left arrow-round'></i>",
+                        "<i class='fa fa-angle-right arrow-round'></i>"
+                    ]
+                },
+                '#owl-carousel-testimonial': {
+                    singleItem: true, transitionStyle: "goDown", navigation: true,
+                    navigationText: [
+                        "<i class='fa fa-angle-left arrow-round'></i>",
+                        "<i class='fa fa-angle-right arrow-round'></i>"
+                    ]
+                },
+            });
+            SLAMR.bootstrapCarousel({
+                '#carousel-head': { interval: 5000, pause: false }
+            });
+            SLAMR.contactForm();
+            SLAMR.fitVids(".video-container");
 
-				<div class="recent-blog-container animated" data-animation-delay="200" data-animation="fadeInUp">
-					<div class="col-sm-6">
-						<div class="image">
-							<div id="owl-carousel-blog" class="owl-carousel">
-								<div class="owl-container">
-									<div class="img-blog-container"><a href="#" target="_blank"><img src="img/blog/blog-1.jpg" class="img-responsive" alt="" /></a></div>
-								</div>
-								<div class="owl-container">
-									<div class="img-blog-container"><a href="#" target="_blank"><img src="img/blog/blog-2.jpg" class="img-responsive" alt="" /></a></div>
-								</div>								
-							</div><!--carousel-->
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="body">
-							<h3>BEACH LOVE</h3>
-							<small class="text-muted"><i class="fa fa-user"></i> By John J. Doe</small>
-							<p>
-								This is the short version of this blog post. You could call it the excerpt. 3 Lines should be enough.
-							</p>
-							<div class="meta">
-								<ul class="list-inline">
-									<li>
-										25/03/14
-									</li>
-									<li>
-										<strong>12</strong> Comments
-									</li>
-									<li class="pull-right">
-										0 <i class="fa fa-heart"></i>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="background-icon animated" data-animation-delay="400" data-animation="fadeInLeft">
-							<i class="fa fa-picture-o"></i>
-						</div>
-					</div>
-				</div>
-				
-				<div class="recent-blog-container animated" data-animation-delay="200" data-animation="fadeInUp">
-					<div class="col-sm-6">
-						<div class="body">
-							<h3>DISSASEMBLED</h3>
-							<small class="text-muted"><i class="fa fa-user"></i> By John J. Doe</small>
-							<p>
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-							</p>
-							<div class="meta">
-								<ul class="list-inline">
-									<li>
-										25/03/14
-									</li>
-									<li>
-										<strong>12</strong> Comments
-									</li>
-									<li class="pull-right">
-										123 <i class="fa fa-heart"></i>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="background-icon left animated" data-animation-delay="400" data-animation="fadeInRight">
-							<i class="fa fa-picture-o"></i>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="image">
-							<img src="img/blog/blog-3.jpg" class="img-responsive image-modal" data-mfp-src="img/blog/blog-3.jpg"  alt="" title="This is the title">
-						</div>
-					</div>
-				</div>
-				
-				<div class="recent-blog-container animated" data-animation-delay="200" data-animation="fadeInUp">
-					<div class="col-sm-6">
-						<div class="image">
-							<div class="video-container">
-								<iframe src="http://player.vimeo.com/video/25708134?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" style="border-width:0px"></iframe>
-							</div>	
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="body">
-							<h3>VIDEO</h3>
-							<small class="text-muted"><i class="fa fa-user"></i> By John J. Doe</small>
-							<p>
-								This is the short version of this blog post. You could call it the excerpt. 3 Lines should be enough.
-							</p>
-							<div class="meta">
-								<ul class="list-inline">
-									<li>
-										25/03/14
-									</li>
-									<li>
-										<strong>12</strong> Comments
-									</li>
-									<li class="pull-right">
-										33 <i class="fa fa-heart"></i>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="background-icon animated" data-animation-delay="400" data-animation="fadeInLeft">
-							<i class="fa fa-camera"></i>
-						</div>
-					</div>
-				</div>
-				
-			<p>
-				<a href="#" class="btn btn-default btn-large"><i class="fa fa-eye"></i> Show all Blog Posts</a>
-			</p>
-		</div><!--container-->
-	</section>
-	
-	<section id="testimonials" class="testimonials">
-		<div class="container">
-			<div class="row">
-				<div class="hero col-sm-6 col-sm-offset-3">
-					<h2>Testimonials</h2>
-					<p>What my clients think about me</p>
-					<div class="space"></div>
-				</div>
-			</div>
-				<div class="col-md-10 col-md-offset-1">
-					<div id="owl-carousel-testimonial" class="owl-carousel">
-						<div class="img-testimonial-container animated" data-animation-delay="400" data-animation="fadeInUp"><img src="img/testimonials/testimonial-1.jpg" class="img-responsive img-circle" alt="" />
-							<p>
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-							</p>
-							<cite title="Source Title" class="text-mute">John Adams (CEO - Company)</cite>
-						</div>
-						<div class="img-testimonial-container animated" data-animation-delay="400" data-animation="fadeInUp"><img src="img/testimonials/testimonial-2.jpg" class="img-responsive img-circle" alt="" />
-							<p>
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <b>I LOVE IT</b>
-							</p>
-							<cite title="Source Title" class="text-mute">Peter Frownd (Graphic Designer)</cite>
-						</div>
-						<div class="img-testimonial-container animated" data-animation-delay="400" data-animation="fadeInUp"><img src="img/testimonials/testimonial-3.jpg" class="img-responsive img-circle" alt="" />
-							<p>
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr
-							</p>
-							<cite title="Source Title" class="text-mute">John Doe (Rockstar)</cite>
-						</div>
-					</div><!--carousel-->
-				</div>
-			</div>
-	</section>
-	
-	<section id="awards">
-		<div class="container">
-			<div class="row">
-				<div class="hero col-sm-6 col-sm-offset-3">
-					<h2>Awards</h2>
-					<p>Some Awards I received</p>
-					<div class="space"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-6 info-box animated" data-animation-delay="100" data-animation="fadeIn">
-					<div class="icon">
-						<i class="fa fa-trophy icon-effect"></i>
-					</div>
-					<div class="content">
-						<h3>AWWWARDS</h3>
-						<p>
-							Website of the day.
-						</p>
-						<small class="text-muted">Received: February 2nd 2014</small>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 info-box animated" data-animation-delay="150" data-animation="fadeIn">
-					<div class="icon">
-						<i class="fa fa-code icon-effect"></i>
-					</div>
-					<div class="content">
-						<h3>CSS DESIGN AWARDY</h3>
-						<p>
-							Best CSS Code website of the month.
-						</p>
-						<small class="text-muted">Received: September 2013</small>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 info-box animated" data-animation-delay="200" data-animation="fadeIn">
-					<div class="icon">
-						<i class="fa fa-wheelchair icon-effect"></i>
-					</div>
-					<div class="content">
-						<h3>Page Usability Award</h3>
-						<p>
-							Best usability for disabled persons.
-						</p>
-						<small class="text-muted">Received: November 22nd 2014</small>
-					</div>
-				</div>
-	
-				<div class="col-md-4 col-sm-6 info-box animated" data-animation-delay="250" data-animation="fadeIn">
-					<div class="icon">
-						<i class="fa fa-picture-o icon-effect"></i>
-					</div>
-					<div class="content">
-						<h3>Shoot of the Day</h3>
-						<p>
-							Awarded beach photo
-						</p>
-						<small class="text-muted">Received: NA</small>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 info-box animated" data-animation-delay="300" data-animation="fadeIn">
-					<div class="icon">
-						<i class="fa fa-lightbulb-o icon-effect"></i>
-					</div>
-					<div class="content">
-						<h3>Smartest Idea</h3>
-						<p>
-							Best idea in a brainstorming for revolutionary navigation.
-						</p>
-						<small class="text-muted">Received: September 2013</small>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 info-box animated" data-animation-delay="350" data-animation="fadeIn">
-					<div class="icon">
-						<i class="fa fa-heart icon-effect"></i>
-					</div>
-					<div class="content">
-						<h3>Most loved Item</h3>
-						<p>
-							Most (per month) likes on a homepage PSD design
-						</p>
-						<small class="text-muted">Received: November 22nd 2014</small>
-					</div>
-				</div>
-			</div><!--row-->
-		</div>
-	</section>
+            SLAMR.magnific({
+                '.image-modal': {
+                    type: 'image', image: {
+                        markup: '<div class="mfp-figure">' +
+                            '<div class="mfp-close"></div>' +
+                            '<div class="mfp-img"></div>' +
+                            '<div class="mfp-bottom-bar">' +
+                            '<div class="mfp-title"></div>' +
+                            '<div class="mfp-counter"></div>' +
+                            '</div>' +
+                            '</div>',
+                        titleSrc: 'title', verticalFit: true, tError: '<a href="%url%">The image</a> could not be loaded.'
+                    }, closeBtnInside: true, midClick: true, fixedContentPos: false, preloader: true, gallery: { enabled: true }, removalDelay: 0, mainClass: 'mfp-fade'
+                }
+            });
 
-	<section id="contact" class="no-section-padding">
-		<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
-			<path d="M0 0 L50 100 L100 0 Z"/>
-		</svg>
-		<div class="container text-center">
-			<div class="row section-padding">
-				<div class="hero">
-						<h2>Get in touch</h2>
-						<p>No matter what. Just do it</p>
-				</div>
-				<div class="col-sm-6 col-sm-offset-3 animated" data-animation-delay="300" data-animation="fadeInLeft">
-					<h2>John Slamr </h2>
-					<address>
-						795 Folsom Ave, Suite 600
-						<br>
-						San Francisco, CA 94107
-						<br>
-						<abbr title="Phone">P:</abbr> (123) 456-7890
-						<br>
-						<a href="mailto:#">mail@SLAMR.com</a>
-					</address>
-					<div class="background-icon left animated" data-animation-delay="400" data-animation="fadeInRight">
-						<i class="fa fa-envelope-o"></i>
-					</div>
-				</div>
-				<div class="col-sm-6 col-sm-offset-3 animated" data-animation-delay="600" data-animation="fadeInRight">
-					<form class="contact-form" id="contact-form" role="form">
-						<div class="form-group">
-							<label class="sr-only" for="inputName">Name</label>
-							<input type="text" placeholder="Name" name="inputName" id="inputName" class="form-control">
-						</div>
-
-						<div class="form-group">
-							<label class="sr-only" for="inputEmail">Email address</label>
-							<input type="email" placeholder="Enter email" name="inputEmail" id="inputEmail" class="form-control">
-						</div>
-
-						<div class="form-group">
-							<label class="sr-only" for="inputMessage">Message</label>
-							<textarea placeholder="Your Message" name="inputMessage" rows="5" id="inputMessage" class="form-control"></textarea>
-						</div>
-						<div class="pull-right">
-							<p><button id="contact-submit" class="btn btn-default btn-submit" type="submit"><i class="fa fa-check"></i> Submit</button></p>
-						</div>
-						<div class="clearfix"></div>
-						<div id="contact-form-response"></div>
-					</form>
-				</div>
-			</div><!--row-->
-			
-				<div class="social-icons">
-					<a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
-					<a href="#" target="_blank" class="flickr"><i class="fa fa-flickr"></i> </a>
-					<a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i> </a>
-					<a href="#" target="_blank" class="pinterest"><i class="fa fa-pinterest"></i> </a>
-					<a href="#" target="_blank" class="dribbble"><i class="fa fa-dribbble"></i> </a>
-					<a href="#" target="_blank" class="dropbox"><i class="fa fa-dropbox"></i> </a>
-					<a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i> </a>
-				</div>
-				<div class="clearfix"></div>
-			
-		</div><!--container-->		
-	</section>
-
-	<!--footer-->
-	<footer>
-	<div class="container text-center">
-		<div class="row">
-			<div class="col-md-12">
-				<p class="copy">
-					&copy; <strong>JOHN SLAMR</strong> 2014 | TEMPLATE CREATED BY <a href="http://www.createbrilliance.com" target="_blank">CREATEBRILLIANCE - Media &amp; Consulting</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	</footer>
-
-  		<script type="text/javascript" src="js/vendor/jquery-1.10.1.min.js"></script>
-		<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/plugins.js"></script>
-		<script type="text/javascript" src="owl-carousel/owl.carousel.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-
-		<script>
-			$(document).ready(function(){		
-				SLAMR.preloader();
-                SLAMR.videoBgYT('#video-wrapper','7xbqVuaMufs');			
-                // PUOun9RImC8
-                // https://youtu.be/jYxC-G9gRTE
-                // https://youtu.be/LEzsbOfW6es
-                // https://youtu.be/7xbqVuaMufs
-				SLAMR.nav();	
-				SLAMR.parallax(true);							
-				SLAMR.slider("#slides", {'play':false, 'animation': 'fade'});				
-				SLAMR.skillbar("animated");				
-				SLAMR.scrollAnim("yes");							
-				SLAMR.owlCarousel({
-				'#owl-carousel-blog':{singleItem : true,
-						lazyLoad:true,
-						autoPlay : true},
-				'#owl-carousel-clients':{navigation: true,
-				navigationText: [
-      				"<i class='fa fa-angle-left arrow-round'></i>",
-      				"<i class='fa fa-angle-right arrow-round'></i>"
-      			]},
-      			'#owl-carousel-testimonial':{singleItem:true,transitionStyle: "goDown",navigation: true,
-				navigationText: [
-      				"<i class='fa fa-angle-left arrow-round'></i>",
-      				"<i class='fa fa-angle-right arrow-round'></i>"
-      			]}, 
-				});	
-				SLAMR.bootstrapCarousel({
-				'#carousel-head':{interval:5000,pause:false}
-				});	
-				SLAMR.contactForm();
-				SLAMR.fitVids(".video-container");
-				
-				SLAMR.magnific({
-					'.image-modal':{type:'image',image: { 
-						markup: '<div class="mfp-figure">'+
-						            '<div class="mfp-close"></div>'+
-						            '<div class="mfp-img"></div>'+
-						            '<div class="mfp-bottom-bar">'+
-						              '<div class="mfp-title"></div>'+
-						              '<div class="mfp-counter"></div>'+
-						            '</div>'+
-						          '</div>',												  
-						  titleSrc: 'title',verticalFit: true,tError: '<a href="%url%">The image</a> could not be loaded.'
-					},closeBtnInside:true,midClick: true,fixedContentPos:false,preloader:true,gallery:{ enabled:true},removalDelay: 0,mainClass: 'mfp-fade'}});
-				
-				SLAMR.portfolioFilter("#portfolio .filter a", "#portfolio .portfolio-grid div");
-				SLAMR.portfolio(".portfolio-link",{
-					"pWrapper"	: ".portfolio-wrapper",
-		            "section"	: "#portfolio",
-		            "pContent"	: ".portfolio-content",
-		            "pContainer": ".portfolio-container",
-		            "close"		: ".portfolio-close",
-		            "carousel"	: ".owl-portfolio"
-		      	});							
-			}); //document ready
-		</script>
-
-    </body>   
-</html>
+            SLAMR.portfolioFilter("#portfolio .filter a", "#portfolio .portfolio-grid div");
+            SLAMR.portfolio(".portfolio-link", {
+                "pWrapper": ".portfolio-wrapper",
+                "section": "#portfolio",
+                "pContent": ".portfolio-content",
+                "pContainer": ".portfolio-container",
+                "close": ".portfolio-close",
+                // "close"     : ".portfolio-close-bottom",
+                "carousel": ".owl-portfolio"
+            });
+        }); //document ready
+    </script>
+    
+    </body>
+    
+    </html>
