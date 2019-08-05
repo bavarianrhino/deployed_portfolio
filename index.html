@@ -46,6 +46,10 @@
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700'
         rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="highlight/styles/atom-one-dark.css">
+    <script src="highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
@@ -579,17 +583,49 @@
                                 </ul>
                             </div>
                         </div>
+
+                        <hr class="invisible">
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <pre>
+                                    <code>
+export const landFavorites = (urls) => {
+    return (dispatch) => {
+        dispatch({ type: 'LOADING_FAVORITES' });
+        return Promise.all(
+            urls.map(async (api) => {
+                const response = await fetch(
+                `${api_id}?api_key=${KEY}`, {
+                    method: 'GET',
+                    headers: { Accept: 'application/json' }
+                });
+                const json = await response.json();
+                dispatch({ type: 'LANDING_FAVORITES', json });
+            })
+        )
+    }
+}
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check"></i> Comprehensively utilized the Marketcheck API by implementing a variety of unique API calls depending on user input data.</li>
+                                    <li><i class="fa fa-check"></i> Coupled Thunk Middleware with a javascript Promise allowing me to iterate over an array of data while simultaneously calling the API.</li>
+                                    <li><i class="fa fa-check"></i> Each selected dropdown makes an API call that then uses the response to fill the next dropdown with relative and accurate data. This prohibits any user from searching vehicles that do not exist or are not currently being sold.</li>
+                                </ul>
+                            </div>
+                        </div>
     
                         <hr class="invisible">
     
                         <div class="row">
                             <div class="col-sm-6">
-                                Comprehensively utilized the Marketcheck API by implementing a variety of unique API calls depending on user input data.
+                                Every vehicle card contains links to like/follow, see images within a modal, connect you to google maps with vehicles exact location, and to the seller's website.
+                                Most of the API data was complete, however, I found it necessary to implement a catch and fall back for every vehicle parameter that may query with empty content or as undefined. 
                                 <br>
-                                Each dropdown search calls the Marketcheck API that is then used to render the next dropdown search prohibiting a user to input nonexistent data.
-                                It is said that song composers of the past used dummy texts as lyrics when writing melodies
-                                in order to have a 'ready-made' text to sing with the melody. Dummy texts have been in use
-                                by typesetters since the 16th century.
+                                When planning this project, I specifically wanted an API that provided me vehicle data through an API call rather than juggle large JSON data sets that would sit within the directories.
                             </div>
                             <div class="col-sm-6">
                                 <img class="img-responsive" src="img/gifs/Search_Used_Cars.gif"
@@ -604,11 +640,11 @@
                                 <img class="img-responsive" src="img/gifs/Search_Vehicle_Value.gif" alt="" />
                             </div>
                             <div class="col-sm-6">
-                                Describe process to making data plot
+                                Users can search for a specific vehicle and receive relevant cost and milage data of other similar cars within their desired milage radius.
                                 <ul class="list-unstyled">
-                                    <li><i class="fa fa-check"></i> Dummy Text Feature 1</li>
-                                    <li><i class="fa fa-check"></i> This is another feature</li>
-                                    <li><i class="fa fa-check"></i> Wow a third one</li>
+                                    <li><i class="fa fa-check"></i> Render unknown and complex vehicle data from user selected dropdown forms.</li>
+                                    <li><i class="fa fa-check"></i> Data is graphed in an easy to understand visual data-plot by cost and milage by using the Recharts library.</li>
+                                    <li><i class="fa fa-check"></i> Every data-plot shows the minimum, maximum, national mean, and national average vehicle.</li>
                                 </ul>
                             </div>
                         </div>
