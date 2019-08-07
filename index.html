@@ -357,7 +357,7 @@
         </div>
     
         <div class="portfolio-wrapper">
-            <div class="container">
+            <div class="container" id="bring-to-top">
                 <div class="portfolio-close"><span>close</span></div>
                 <div class="portfolio-container"></div>
                 <div class="arrow-up"></div>
@@ -416,9 +416,7 @@
                             <p class="text-center">
                                 Auto Pasture is a web application that allows users to search used and new vehicles by make
                                 model and year based on their location. It also allows users to like and follow particular
-                                vehicles that they may be interested in.
-                                <br />
-                                Built backend with Ruby on Rails and utilized ActiveRecord with a many to many SQL database
+                                vehicles that they may be interested in. Built backend with Ruby on Rails and utilized ActiveRecord with a many to many SQL database
                                 relationship. Frontend UI was built with React and Redux, while heavily leaning on
                                 Semantic-UI-React and Thunk Middleware for asynchronous 'effect' of API calling.
                             </p>
@@ -442,48 +440,9 @@
                             </div>
                         </div>
     
+                        
                         <hr class="invisible">
-    
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <pre>
-                                        <code>
-    export const landFavorites = (urls) => {
-        return (dispatch) => {
-            dispatch({ type: 'LOADING_FAVORITES' });
-            return Promise.all(
-                urls.map(async (api) => {
-                    const response = await fetch(
-                    `${api_id}?api_key=${KEY}`, {
-                        method: 'GET',
-                        headers: { Accept: 'application/json' }
-                    });
-                    const json = await response.json();
-                    dispatch({ type: 'LANDING_FAVORITES', json });
-                })
-            )
-        }
-    }
-                                        </code>
-                                    </pre>
-                            </div>
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-check"></i> Comprehensively utilized the Marketcheck API by
-                                        implementing a variety of unique API calls depending on user input data.</li>
-                                    <li><i class="fa fa-check"></i> Coupled Thunk Middleware with a javascript Promise
-                                        allowing me to iterate over an array of data while simultaneously calling the API.
-                                    </li>
-                                    <li><i class="fa fa-check"></i> Each selected dropdown makes an API call that then uses
-                                        the response to fill the next dropdown with relative and accurate data. This
-                                        prohibits any user from searching vehicles that do not exist or are not currently
-                                        being sold.</li>
-                                </ul>
-                            </div>
-                        </div>
-    
-                        <hr class="invisible">
-    
+                        
                         <div class="row">
                             <div class="col-sm-6">
                                 Every vehicle card contains links to like/follow, see images within a modal, connect you to
@@ -520,14 +479,53 @@
                                 </ul>
                             </div>
                         </div>
-    
+                        
                         <hr class="invisible">
-    
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check"></i> Comprehensively utilized the Marketcheck API by
+                                        implementing a variety of unique API calls depending on user input data.</li>
+                                        <li><i class="fa fa-check"></i> Coupled Thunk Middleware with a javascript Promise
+                                        allowing me to iterate over an array of data while simultaneously calling the API.
+                                    </li>
+                                    <li><i class="fa fa-check"></i> Each selected dropdown makes an API call that then uses
+                                        the response to fill the next dropdown with relative and accurate data. This
+                                        prohibits any user from searching vehicles that do not exist or are not currently
+                                        being sold.</li>
+                                    </ul>
+                                </div>
+                            <div class="col-sm-6">
+                                <pre class="custom-code">
+                                        <code>
+    export const landFavorites = (urls) => {
+        return (dispatch) => {
+            dispatch({ type: 'LOADING_FAVORITES' });
+            return Promise.all(
+                urls.map(async (api) => {
+                    const response = await fetch(`${api_id}?api_key=${KEY}`, {
+                        method: 'GET',
+                        headers: { Accept: 'application/json' }
+                    });
+                    const json = await response.json();
+                    dispatch({ type: 'LANDING_FAVORITES', json });
+                })
+            )
+        }
+    }
+                                        </code>
+                                    </pre>
+                            </div>
+                        </div>
+
+                        <hr class="invisible">
+                        
                         <div class="tags">
                             <h5>TAGS</h5>
                             <p>
                                 <span class="tagIcon">React</span><span class="tagIcon">Redux</span><span
-                                    class="tagIcon">Ruby</span><span class="tagIcon">Rails</span>
+                                class="tagIcon">Ruby</span><span class="tagIcon">Rails</span>
                             </p>
                         </div>
                     </div>
@@ -567,34 +565,39 @@
                                 <h5>PROJECT DESCRIPTION</h5>
                                 <div class="description">
                                     <p>
+                                        A driving/survival game. Accumulate the highest score possible before running out of resources!
                                         Describe project here.
                                         <br />
-                                        And a little more here
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-dot-circle-o"></i>Developed a Ruby on Rails backend with a PostgreSQL database & login/authentication with JWT & BCrypt.</li>
+                                            <li><i class="fa fa-dot-circle-o"></i>Designed & implemented custom game logic, including collision detection & time based game mechanics.</li>
+                                            <li><i class="fa fa-dot-circle-o"></i>Created a user interface using React & Semantic UI React, as well as custom CSS.</li>
+                                        </ul>
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="client">
+                                <div class="client marg-bot-10">
                                     <h5>MOD 4 FINAL PROJECT</h5>
                                     <p>Project Partner: Spike Burton</p>
                                 </div>
-                                <div class="date">
+                                <div class="date marg-bot-10">
                                     <h5>TIMEFRAME</h5>
                                     <p>1 Week</p>
                                 </div>
-                                <div class="url">
+                                <div class="url marg-bot-10">
                                     <h5>URL</h5>
                                     <p><a
                                             href="https://spikeburton.github.io/mod-4-frontend-final-project/#/login">www.carworld.com</a>
                                     </p>
                                 </div>
-                                <div class="url">
+                                <div class="url marg-bot-10">
                                     <h5>DEMO URL</h5>
                                     <p><a
                                             href="https://www.youtube.com/watch?v=FMrLedHd4Hc&feature=youtu.be">www.youtube.com</a>
                                     </p>
                                 </div>
-                                <div class="url">
+                                <div class="url marg-bot-10">
                                     <h5>GitHub Repos</h5>
                                     <p><a href="https://github.com/bavarianrhino/mod-4-frontend-final-project">Front-End
                                             Repo</a></p>
@@ -646,23 +649,25 @@
                                 </div>
                                 <h5>PROJECT DESCRIPTION</h5>
                                 <div class="description">
-                                    <p>
-                                        Describe project here.
-                                        <br />
-                                        And a little more here
+                                    <p>WordPress/Woocommerce site that sells OEM and custom fabricated vehicle parts for classic Volkswagens.
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-dot-circle-o"></i>Hosted and curated all theme and product content including responsive CSS and overall organization.
+                                            <li><i class="fa fa-dot-circle-o"></i>Install plugins, update content based on customers needs while proactively seeking superior methods.
+                                            <li><i class="fa fa-dot-circle-o"></i>Implemented user-friendly product category search tools when given complex parts, vehicles, & vendors.
+                                        </ul>
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="client">
+                                <div class="client marg-bot-10">
                                     <h5>OWNER</h5>
                                     <p>Slammed Bullies Company</p>
                                 </div>
-                                <div class="date">
+                                <div class="date marg-bot-10">
                                     <h5>TIMEFRAME</h5>
                                     <p>Currently Ongoing</p>
                                 </div>
-                                <div class="url">
+                                <div class="url marg-bot-10">
                                     <h5>URL</h5>
                                     <p><a href="https://www.slammedbullies.com">www.slammedbullies.com</a></p>
                                 </div>
@@ -705,23 +710,24 @@
                                 </div>
                                 <h5>PROJECT DESCRIPTION</h5>
                                 <div class="description">
-                                    <p>
-                                        Describe project here.
-                                        <br />
-                                        And a little more here
+                                    <p>WordPress/Woocommerce site that sells custom suspension & brake kits/parts for classic Volkswagens.
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-dot-circle-o"></i>Curated all content including but not limited to custom theme, responsive CSS, photos, descriptions, etc.
+                                            <li><i class="fa fa-dot-circle-o"></i>Organized complex product categories allowing users to shop by vehicle or by product type.
+                                        </ul>
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="client">
+                                <div class="client marg-bot-10">
                                     <h5>OWNER</h5>
                                     <p>Vintage V-Dubs</p>
                                 </div>
-                                <div class="date">
+                                <div class="date marg-bot-10">
                                     <h5>TIMEFRAME</h5>
                                     <p>Currently Ongoing</p>
                                 </div>
-                                <div class="url">
+                                <div class="url marg-bot-10">
                                     <h5>URL</h5>
                                     <p><a href="https://www.vintagev-dubs.com">www.vintagev-dubs.com</a></p>
                                 </div>
